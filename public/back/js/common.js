@@ -21,7 +21,6 @@ $(function(){
       type:"get",
       url:"/employee/checkRootLogin",
       success:function(info){
-        console.log(info);
 
         if(info.error==400){
           //说明没登录

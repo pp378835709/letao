@@ -136,3 +136,10 @@ a:hover,a:active{
   height: 400px;
 }
 
+
+
+.table.table-bordered td{
+  text-align: center;
+  vertical-align: middle;
+}
+

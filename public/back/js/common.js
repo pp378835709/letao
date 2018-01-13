@@ -52,6 +52,8 @@ $(function(){
     //主体部分padding-left:0
     $(".lt_aside").toggleClass("now");
     $(".lt_mian").toggleClass("now");
+    $(".lt_header").toggleClass("now")
+
   })
 
 

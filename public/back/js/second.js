@@ -25,6 +25,21 @@ $(function(){
           bootstrapMajorVersion:3,
           currentPage:page,
           totalPages:Math.ceil(info.total/info.size),
+          itemTexts: function (type, page, current) {//设置显示的样式，默认是箭头
+            switch (type) {
+              case "first":
+                return "首页";
+              case "prev":
+                return "上一页";
+              case "next":
+                return "下一页";
+              case "last":
+                return "末页";
+              case "page":
+                return page;
+            }
+          },
+
           onPageClicked:function(a,b,c,p){
             page = p;
             render();
@@ -45,10 +60,10 @@ $(function(){
     //发送aja
     $.ajax({
        type:"get",
-       url:"/category/querySecondCategoryPaging",
+       url:"/category/queryTopCategoryPaging",
        data:{
          page:page,
-         pageSize:pageSize
+         pageSize:100
        },
       success:function(info){
         console.log(info);

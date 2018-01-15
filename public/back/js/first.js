@@ -32,7 +32,7 @@ $(function(){
           bootstrapMajorVersion: 3,
           currentPage:page,
           totalPages:Math.ceil(info.total/info.size),
-          onPageChanged:function(a,b,c,p){
+          onPageClicked:function(a,b,c,p){
             page = p;
             render();
           }

@@ -189,19 +189,19 @@ $(function(){
   $form.on("success.form.bv",function(e){
     e.preventDefault();
     //拼接图片信息
-     var faram = $form.serialize();
-     faram += "&picName1="+imgArr[0].picName + "&picAddr1="+imgArr[0].picAddr;
-     faram += "$picName2="+imgArr[1].picName + "$picAddr2="+imgArr[1].picAddr;
-     faram += "$picName3="+imgArr[2].picName + "$picAddr2="+imgArr[2].picAddr;
+     var param = $form.serialize();
+    param += "&picName1="+imgArr[0].picName + "&picAddr1="+imgArr[0].picAddr;
+    param += "&picName2="+imgArr[1].picName + "&picAddr2="+imgArr[1].picAddr;
+    param += "&picName3="+imgArr[2].picName + "&picAddr3="+imgArr[2].picAddr;
 
-    console.log(faram);
+    console.log(param);
 
 
     //发送ajax
     $.ajax({
       type:"post",
       url:"/product/addProduct",
-      data:faram,
+      data:param,
       success:function(info){
         console.log(info);
         if(info.success){
